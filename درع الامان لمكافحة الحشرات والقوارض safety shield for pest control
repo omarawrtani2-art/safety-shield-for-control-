@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>درع الأمان | مكافحة الحشرات والقوارض</title>
+
+    <!-- Bootstrap 5 RTL -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+    
+    <!-- Google Fonts: Cairo -->
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --brand-dark: #0f2d4a;       
+            --brand-deep: #0a1f33;       
+            --brand-gold: #ffc107;       
+            --brand-gold-hover: #e0a800;
+            --bg-light: #f5f7fa;         
+            --transition-smooth: all 0.3s ease-in-out;
+        }
+
+        body {
+            font-family: 'Cairo', sans-serif;
+            background: var(--bg-light);
+            color: var(--brand-deep);
+            overflow-x: hidden;
+        }
+
+        /* --- TOP ANNOUNCEMENT BAR --- */
+        .promo-bar {
+            background: var(--brand-gold);
+            color: var(--brand-deep);
+            font-weight: 700;
+            text-align: center;
+            padding: 8px 0;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1030;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-deep));
+            padding: 15px 0;
+            transition: var(--transition-smooth);
+        }
+
+        .navbar.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        }
+
+        .navbar-brand {
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            position: relative;
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            background: url('https://i.ibb.co/RGpCFM9q/image.jpg') center/cover no-repeat fixed;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            inset: 0;
+            background: rgba(10, 25, 45, 0.8);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .hero-logo {
+            width: 150px;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 50%;
+            background: white;
+            padding: 8px;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .hero-title {
+            font-weight: 800;
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero-lead {
+            font-size: 1.4rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+        }
+
+        /* --- TRUST BAR --- */
+        .trust-bar-container {
+            margin-top: -40px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .trust-bar {
+            background: white;
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        }
+
+        .trust-item {
+            font-weight: 700;
+            color: var(--brand-dark);
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        .trust-item i {
+            color: #28a745;
+        }
+
+        /* --- SECTIONS --- */
+        section {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            font-weight: 800;
+            color: var(--brand-dark);
+            text-align: center;
+            margin-bottom: 45px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 4px;
+            background: var(--brand-gold);
+            border-radius: 2px;
+        }
+
+        /* --- WHY US CARDS (NEW) --- */
+        .why-card {
+            background: white;
+            border-radius: 16px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.03);
+            border: 1px solid #eef1f5;
+            transition: var(--transition-smooth);
+            height: 100%;
+        }
+
+        .why-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--brand-gold);
+            box-shadow: 0 10px 25px rgba(15, 45, 74, 0.08);
+        }
+
+        .why-icon {
+            width: 60px;
+            height: 60px;
+            line-height: 60px;
+            background: rgba(15, 45, 74, 0.05);
+            color: var(--brand-dark);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+            display: inline-block;
+            transition: var(--transition-smooth);
+        }
+
+        .why-card:hover .why-icon {
+            background: var(--brand-dark);
+            color: white;
+        }
+
+        /* --- STATS --- */
+        .stats {
+            background: var(--brand-dark);
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .stat-box {
+            font-size: 1.3rem;
+            font-weight: 700;
+            padding: 15px;
+        }
+
+        .stat-box i {
+            color: var(--brand-gold);
+            margin-bottom: 10px;
+            font-size: 1.8rem;
+            display: block;
+        }
+
+        /* --- PESTS CARDS --- */
+        .card-pest {
+            border: none;
+            border-radius: 16px;
+            overflow: hidden;
+            background: white;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            transition: var(--transition-smooth);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-pest:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 30px rgba(0,0,0,0.1);
+        }
+
+        .pest-image-holder {
+            height: 220px;
+            overflow: hidden;
+        }
+
+        .pest-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .card-pest:hover .pest-image {
+            transform: scale(1.06);
+        }
+
+        .pest-footer {
+            padding: 20px;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--brand-dark);
+            background: white;
+            border-top: 1px solid #f0f2f5;
+        }
+
+        /* --- TESTIMONIALS --- */
+        .testimonials-section {
+            background: white;
+        }
+
+        .testimonial-item {
+            background: var(--bg-light);
+            padding: 25px;
+            border-radius: 16px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.03);
+            height: 100%;
+            font-weight: 600;
+            font-size: 1.1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid #eef1f5;
+        }
+
+        .review-cta-box {
+            background: linear-gradient(135deg, var(--brand-dark), var(--brand-deep));
+            color: white;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(15, 45, 74, 0.2);
+        }
+
+        /* --- FAQ ACCORDION (NEW) --- */
+        .accordion-item {
+            border: none;
+            margin-bottom: 15px;
+            border-radius: 12px !important;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+            overflow: hidden;
+        }
+
+        .accordion-button {
+            font-weight: 700;
+            color: var(--brand-dark) !important;
+            background: white !important;
+            box-shadow: none !important;
+            padding: 20px;
+        }
+
+        .accordion-button:not(.collapsed) {
+            background: rgba(15, 45, 74, 0.03) !important;
+            color: var(--brand-dark) !important;
+        }
+
+        .accordion-body {
+            background: white;
+            padding: 20px;
+            color: #55687d;
+            line-height: 1.7;
+        }
+
+        /* --- BUTTONS --- */
+        .btn-warning {
+            background: var(--brand-gold);
+            border-color: var(--brand-gold);
+            color: var(--brand-deep);
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 50px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-warning:hover {
+            background: var(--brand-gold-hover);
+            border-color: var(--brand-gold-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-primary {
+            background: var(--brand-dark);
+            border-color: var(--brand-dark);
+            font-weight: 700;
+            padding: 12px 32px;
+            border-radius: 50px;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-primary:hover {
+            background: var(--brand-deep);
+            border-color: var(--brand-deep);
+            transform: translateY(-2px);
+        }
+
+        /* --- FOOTER --- */
+        footer {
+            background: var(--brand-deep);
+            color: white;
+            padding: 30px 0;
+            font-size: 1rem;
+        }
+
+        /* --- FLOATING ACTIONS --- */
+        .action-buttons-container {
+            position: fixed;
+            bottom: 25px;
+            right: 25px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            z-index: 999;
+        }
+
+        .whatsapp-btn {
+            background: #25d366;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(37, 211, 102, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .whatsapp-btn:hover {
+            transform: scale(1.05);
+            color: white;
+            background: #20ba56;
+        }
+
+        .call-btn {
+            background: #007bff;
+            color: white;
+            padding: 14px 22px;
+            border-radius: 50px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 8px 25px rgba(0, 123, 255, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: var(--transition-smooth);
+        }
+
+        .call-btn:hover {
+            transform: scale(1.05);
+            color: white;
+            background: #0069d9;
+        }
+
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.2rem; }
+            .section-title { font-size: 1.8rem; }
+            .trust-bar-container { margin-top: -20px; }
+            .action-buttons-container { bottom: 15px; right: 15px; gap: 8px; }
+            .whatsapp-btn, .call-btn { padding: 10px 16px; font-size: 0.9rem; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- TOP PROMO BAR (إضافة جديدة) -->
+    <div class="promo-bar">
+        <i class="fa-solid fa-fire-flame-curved me-1"></i> عرض خاص لفترة محدودة: احصل على خصم 20% عند طلب مكافحة القوارض والحشرات اليوم!
+    </div>
+
+    <!-- NAV -->
+    <nav class="navbar navbar-dark sticky-top">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center gap-2" href="#">
+                <img src="https://i.ibb.co/KpcJpnpy/Whats-App-Image-2026-05-07-at-8-22-41-AM.jpg" alt="درع الأمان" width="45" height="45" class="rounded-circle bg-white p-1">
+                <span>درع الأمان</span>
+            </a>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <header class="hero-section">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <img src="https://i.ibb.co/KpcJpnpy/Whats-App-Image-2026-05-07-at-8-22-41-AM.jpg" alt="Logo" class="hero-logo">
+            <h1 class="hero-title">حماية منزلك تبدأ من هنا</h1>
+            <p class="hero-lead">خبراء مكافحة الحشرات والقوارض في الأردن</p>
+            <a class="btn btn-warning btn-lg mt-2" href="https://wa.me/962782549822?text=مرحبا">
+                <i class="fab fa-whatsapp me-1"></i> اطلب خدمة الآن
+            </a>
+        </div>
+    </header>
+
+    <!-- TRUST BAR -->
+    <div class="container trust-bar-container">
+        <div class="trust-bar text-center">
+            <div class="row g-3">
+                <div class="col-md-3 col-6"><div class="trust-item"><i class="fas fa-check-circle"></i> +5000 عميل</div></div>
+                <div class="col-md-3 col-6"><div class="trust-item"><i class="fas fa-bolt"></i> استجابة سريعة</div></div>
+                <div class="col-md-3 col-6"><div class="trust-item"><i class="fas fa-shield-alt"></i> مواد آمنة</div></div>
+                <div class="col-md-3 col-6"><div class="trust-item"><i class="fas fa-award"></i> ضمان الخدمة</div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ABOUT -->
+    <section>
+        <div class="container text-center">
+            <h2 class="section-title">من نحن</h2>
+            <p class="lead text-secondary max-width-700 mx-auto mt-4">شركة درع الأمان تقدم حلول احترافية وآمنة لمكافحة جميع أنواع الحشرات.</p>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: WHY CHOOSE US (إضافة فخمة لجذب وتأكيد ثقة الزبون) -->
+    <section class="bg-white py-5">
+        <div class="container">
+            <h2 class="section-title">لماذا تختار درع الأمان؟</h2>
+            <div class="row g-4 mt-2">
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-user-tie"></i></div>
+                        <h5>طاقم مختص</h5>
+                        <p class="text-muted small mb-0">فنيون ومهندسون خبراء مدربون على أعلى مستوى لتشخيص المشكلة بدقة.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-file-signature"></i></div>
+                        <h5>كفالة خطية</h5>
+                        <p class="text-muted small mb-0">نقدم ضماناً حقيقياً وكفالة خطية على كافة أعمال الرش والمكافحة.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                        <h5>بدون رائحة</h5>
+                        <p class="text-muted small mb-0">نستخدم مواد فرنسية وأمريكية صديقة للبيئة، آمنة تماماً وبدون أي روائح مزعجة.</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="why-card">
+                        <div class="why-icon"><i class="fa-solid fa-arrows-spin"></i></div>
+                        <h5>متابعة دورية</h5>
+                        <p class="text-muted small mb-0">لا تنتهي مهمتنا بالرش، بل نتابع معك لضمان عدم عودة الحشرات نهائياً.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- STATS -->
+    <div class="stats">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 stat-box"><i class="fa-solid fa-briefcase"></i> +10 سنوات خبرة</div>
+                <div class="col-md-4 stat-box"><i class="fa-solid fa-circle-check"></i> +5000 عملية ناجحة</div>
+                <div class="col-md-4 stat-box"><i class="fa-solid fa-face-smile"></i> رضا العملاء 98%</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PESTS -->
+    <section class="bg-light">
+        <div class="container">
+            <h2 class="section-title">نقوم بمعالجة</h2>
+
+            <div class="row g-4 mt-2">
+                <!-- 1 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://tse1.mm.bing.net/th/id/OIP.HPy_iL2nOnkGoqrAaEBXYQHaFL" alt="الصراصير">
+                        </div>
+                        <div class="pest-footer">الصراصير</div>
+                    </div>
+                </div>
+                <!-- 2 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://th.bing.com/th/id/OSK.60368f14607800812c69edc5069324c8" alt="النمل">
+                        </div>
+                        <div class="pest-footer">النمل</div>
+                    </div>
+                </div>
+                <!-- 3 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://png.pngtree.com/background/20230519/original/pngtree-bed-bugs-are-standing-on-a-piece-of-wood-picture-image_2661290.jpg" alt="بق الفراش">
+                        </div>
+                        <div class="pest-footer">بق الفراش</div>
+                    </div>
+                </div>
+                <!-- 4 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://www.elmanzl.com/wp-content/uploads/2018/03/D8B4D8B1D983D8A9-D985D983D8A7D981D8ADD8A9-D8A7D984D986D985D984-D8A7D984D8A7D8A8D98AD8B6-D8A8D8A7D984D8B1D98AD8A7D8B6-2000x1200.jpg" alt="النمل الأبيض">
+                        </div>
+                        <div class="pest-footer">النمل الأبيض</div>
+                    </div>
+                </div>
+                <!-- 5 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://cnn-arabic-images.cnn.io/cloudinary/image/upload/w_1920,c_scale,q_auto/cnnarabic/2020/05/11/images/154454.jpg" alt="القوارض">
+                        </div>
+                        <div class="pest-footer">القوارض</div>
+                    </div>
+                </div>
+                <!-- 6 -->
+                <div class="col-lg-4 col-md-6">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://i.ibb.co/QFjZ7545/Whats-App-Image-2026-05-07-at-8-22-37-AM.jpg" alt="ذباب / بعوض">
+                        </div>
+                        <div class="pest-footer">ذباب / بعوض</div>
+                    </div>
+                </div>
+                <!-- 7 -->
+                <div class="col-lg-4 col-md-6 mx-auto">
+                    <div class="card-pest">
+                        <div class="pest-image-holder">
+                            <img class="pest-image" src="https://i.ibb.co/YBbvjsxB/Chat-GPT-Image-May-10-2026-12-37-37-AM.png" alt="آفات خطيرة">
+                        </div>
+                        <div class="pest-footer">آفات خطيرة</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title">آراء العملاء</h2>
+
+            <div class="row g-4 text-center mt-2">
+                <div class="col-md-4"><div class="testimonial-item">🔥 خدمة ممتازة وسريعة جداً</div></div>
+                <div class="col-md-4"><div class="testimonial-item">💯 اختفت الحشرات بالكامل</div></div>
+                <div class="col-md-4"><div class="testimonial-item">👍 تعامل احترافي</div></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION: REQUEST CUSTOMER FEEDBACK -->
+    <section class="bg-light py-5">
+        <div class="container">
+            <div class="review-cta-box text-center">
+                <h3 class="fw-bold mb-3"><i class="fa-regular fa-star-half-stroke text-warning me-2"></i> جربت خدماتنا؟ شاركنا رأيك!</h3>
+                <p class="lead text-light opacity-90 max-width-600 mx-auto mb-4">عميلنا العزيز، تقييمك للعمل بعد الاستخدام يساعدنا على تقديم أفضل جودة دائماً وتطوير خدماتنا لتناسب تطلعاتك.</p>
+                <a href="https://wa.me/962782549822?text=ارغب في تقييم الخدمة" target="_blank" class="btn btn-warning px-4 py-2 fw-bold">
+                    <i class="fa-solid fa-pen-to-square me-1"></i> اضغط هنا لترسل تقييمك عبر الواتساب
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- NEW SECTION: FAQ (الأسئلة الشائعة - إضافة تسويقية ممتازة لإقناع المترددين) -->
+    <section class="bg-white">
+        <div class="container" style="max-width: 800px;">
+            <h2 class="section-title">الأسئلة الشائعة</h2>
+            <div class="accordion mt-5" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            هل المواد المستخدمة آمنة على الأطفال والحيوانات الأليفة؟
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            نعم تماماً، جميع المواد التي نستخدمها مصرحة ومطابقة لمعايير الصحة العالمية، وهي آمنة بالكامل ولا تتطلب منكم مغادرة المنزل في معظم الحالات.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            كم تبلغ فترة الضمان أو الكفالة على الرش؟
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            نمنح عملاءنا كفالة خطية حقيقية تتراوح من 3 إلى 6 أشهر بحسب نوع الآفة المعالجة، وفي حال ظهور أي حشرة خلال فترة الكفالة نعيد الرش مجاناً وبأسرع وقت.
+                        </div>
+                    </div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            كيف يمكنني حجز موعد للزيارة؟
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            يمكنك حجز موعد بكل سهولة عبر الضغط على أزرار الاتصال أو الواتساب العائمة أسفل الشاشة، وسيقوم فريق الدعم الفني بتنسيق الموعد الذي يناسبك فوراً.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- LOCATION -->
+    <section class="bg-light text-center">
+        <div class="container">
+            <h2 class="section-title">موقع الشركة</h2>
+            <p class="lead mt-4 mb-4 fw-bold text-secondary">مكتب درع الأمان - الأردن</p>
+            <a class="btn btn-primary" href="https://maps.app.goo.gl/6UsLnTaTNsuqxWs88?g_st=ic">
+                <i class="fa-solid fa-map-location-dot me-1"></i> فتح الموقع على الخريطة
+            </a>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="text-center">
+        <div class="container">
+            <p class="mb-0">©️ 2026 درع الأمان. جميع الحقوق محفوظة.</p>
+        </div>
+    </footer>
+
+    <!-- TWO FLOATING BUTTONS: WHATSAPP + PHONE CALL (إضافة فخمة) -->
+    <div class="action-buttons-container">
+        <a class="call-btn" href="tel:+962782549822">
+            <i class="fa-solid fa-phone fa-lg"></i>
+            <span>إتصال مباشر</span>
+        </a>
+        <a class="whatsapp-btn" href="https://wa.me/962782549822?text=مرحبا">
+            <i class="fab fa-whatsapp fa-xl"></i>
+            <span>محادثة واتساب</span>
+        </a>
+    </div>
+
+    <!-- BOOTER TRAP JS (مهم جداً لتشغيل الأسئلة الشائعة) -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        window.addEventListener("scroll", function(){
+            document.querySelector(".navbar").classList.toggle("scrolled", window.scrollY > 50);
+        });
+    </script>
+
+</body>
+</html>
